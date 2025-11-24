@@ -1,0 +1,427 @@
+.financas-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 1000px;
+}
+
+.titulo{
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+.titulo-centralizado {
+  text-align: center;
+  margin: 0;
+}
+
+.bloco {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+/* Inputs e selects */
+.inputs-container {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  margin: 8px 0;
+}
+
+/* Label estilizado */
+.input-wrapper label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.input-wrapper .input-icon {
+  position: absolute;
+  right: 12px; /* distância da borda direita */
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.input-mes {
+  width: 100%;
+  padding: 14px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: var(--bg-input);
+  color: var(--text-color);
+  font-size: 1rem;
+  appearance: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+
+.input-mes {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23333' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 10px 6px;
+}
+
+
+
+.input {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--text-color);
+  background: var(--bg-input);
+  color: var(--text-color);
+  font-size: 1rem;
+  min-width: 120px;
+  transition: all 0.25s ease;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+
+select.input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23333' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 10px 6px;
+  cursor: pointer;
+}
+
+.input:focus,
+select.input:focus,
+.input:hover,
+select.input:hover {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+
+select.input option {
+  background: var(--bg-card);
+  color: var(--text-color);
+  padding: 8px;
+}
+
+
+
+.input-ano {
+  font-weight: 600;
+  text-align: center;
+}
+
+.input-ano::-webkit-outer-spin-button,
+.input-ano::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/* Grid de cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* Cards */
+.card {
+  background: var(--card-bg, #fff);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border: 2px solid;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px); /* Levanta levemente */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  border-color: #3498db; /* Borda azul ao passar o mouse */
+}
+
+.card-titulo {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.card-valor {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 8px;
+  color: var(--text-color, #000);
+}
+
+.card-valor-saldo {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+
+/* Gráfico Mês */
+.grafico-mes {
+  margin-top: 16px;
+  background: var(--card-bg, #fff);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.barra-grafico {
+  display: flex;
+  width: 100%;
+  height: 28px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--bg-input);
+}
+
+.barra-gastos {
+  background: #e74c3c;
+  transition: width 0.6s;
+}
+
+.barra-reservas {
+  background: #27ae60;
+  transition: width 0.6s;
+}
+
+.legenda-grafico {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.cor-gasto {
+  color: #e74c3c;
+}
+
+.cor-reserva {
+  color: #27ae60;
+}
+
+
+
+
+
+
+
+
+
+
+/* --- Modo claro padrão --- */
+:root {
+  --bg-body: #eee;
+  --bg-card: #fff;
+  --bg-input: #f8f8f8;
+  --text-color: #000;
+  --text-secondary: #555;
+  --card-mes: #fff
+}
+
+/* --- Modo escuro --- */
+body.dark {
+  --bg-body: 1e1e1e;
+  --bg-card: #1e1e1e;
+  --bg-input: #2c2c2c;
+  --text-color: #fff;
+  --text-secondary: #ccc;
+  --card-mes: #262626;
+}
+
+.financas-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background: var(--bg-body);
+  color: var(--text-color);
+}
+
+.input {
+  background: var(--bg-input);
+  color: var(--text-color);
+}
+
+.card {
+  background: var(--bg-card);
+  color: var(--text-color);
+}
+
+.card-titulo {
+  color: inherit;
+}
+
+.card-valor {
+  color: inherit;
+}
+
+.grafico-mes {
+  background: var(--card-mes);
+  color: var(--text-color);
+}
+
+.legenda-grafico span {
+  color: inherit;
+}
+
+
+
+
+
+/* =======================
+   RESPONSIVIDADE CENTRALIZADA E LARGURA UNIFORME
+   ======================= */
+/* Tablets médios */
+@media (max-width: 1024px) {
+  .financas-container {
+    padding: 2rem;
+    width: 98%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .titulo-centralizado {
+    font-size: 2.4rem;
+    text-align: center;
+  }
+
+  .inputs-container {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .input-wrapper {
+    flex: 1 1 160px; /* largura flexível, mês e ano iguais */
+    min-width: 120px;
+  }
+
+  .input,
+  .input-mes,
+  .input-ano {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+  }
+
+  .card {
+    width: 100%;
+    padding: 20px;
+    margin: 12px 0;
+    text-align: center;
+  }
+
+  .card-titulo { font-size: 1.2rem; }
+  .card-valor { font-size: 1.6rem; }
+}
+
+/* Tablets pequenos / celulares grandes */
+@media (max-width: 768px) {
+  .financas-container {
+    padding: 1.5rem;
+    width: 98%;
+    margin: 0 auto;
+  }
+
+  .titulo-centralizado { font-size: 2rem; }
+
+  .inputs-container {
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .input-wrapper {
+    flex: 1 1 140px;
+    min-width: 120px;
+  }
+
+  .input,
+  .input-mes,
+  .input-ano {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+  }
+
+  .card {
+    width: 100%;
+    padding: 18px;
+    margin: 10px 0;
+  }
+
+  .card-titulo { font-size: 1.1rem; }
+  .card-valor { font-size: 1.4rem; }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+  .financas-container {
+    padding: 1rem;
+    width: 98%;
+    margin: 0 auto;
+  }
+
+  .titulo-centralizado { font-size: 1.8rem; }
+
+  .inputs-container {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .input-wrapper {
+    flex: 1 1 120px;
+    min-width: 100px;
+  }
+
+  .input,
+  .input-mes,
+  .input-ano {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .card {
+    width: 100%;
+    padding: 16px;
+    margin: 8px 0;
+  }
+
+  .card-titulo { font-size: 1rem; }
+  .card-valor { font-size: 1.2rem; }
+}
+
+
+
